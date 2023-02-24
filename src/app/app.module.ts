@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 // Imported modules for HTTP Communications 
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { PromptBuilderComponent } from './prompt-builder/prompt-builder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PromptBuilderComponent
   ],
   imports: [
     BrowserModule,
