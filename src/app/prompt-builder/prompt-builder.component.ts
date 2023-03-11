@@ -11,6 +11,9 @@ export class PromptBuilderComponent {
     prompt: '',
     no: '1',
     size: '1024x1024',
+    exclude: '',
+    include: '',
+    backgroundColor: '',
   });
   img_src: string = '';
   loading: boolean = false;
@@ -27,6 +30,9 @@ export class PromptBuilderComponent {
         prompt: (this.promptForm.get('prompt') as any).value,
         no: (this.promptForm.get('no') as any).value,
         size: (this.promptForm.get('size') as any).value,
+        exclude: (this.promptForm.get('exclude') as any).value,
+        include: (this.promptForm.get('include') as any).value,
+        backgroundColor: (this.promptForm.get('backgroundColor') as any).value,
       }),
     })
       .then((res) => res.text())
@@ -44,7 +50,7 @@ export class PromptBuilderComponent {
     const imageURL = URL.createObjectURL(imageBlob);
     const link = document.createElement('a');
     link.href = imageURL;
-    link.download = 'image.png';
+    link.download = 'image.png' ;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

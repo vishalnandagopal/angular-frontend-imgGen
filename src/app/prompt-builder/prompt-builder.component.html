@@ -13,8 +13,9 @@
         for="prompt"
       >
         Enter your Prompt Here
-      </label> 
-      <input required
+      </label>
+      <input
+        required
         formControlName="prompt"
         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
         id="prompt"
@@ -27,18 +28,51 @@
     <div class="w-full px-3">
       <label
         class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
-        for="grid-exclude"
+        for="exclude"
       >
         Things to exclude
       </label>
-      <input required
+      <input
+        required
+        formControlName="exclude"
         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-        id="grid-exclude"
+        id="exclude"
         type="text"
         placeholder="Blurry, unclear, text"
       />
     </div>
-
+    <div class="w-full px-3">
+      <label
+        class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
+        for="include"
+      >
+        Things to include
+      </label>
+      <input
+        required
+        formControlName="include"
+        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        id="include"
+        type="text"
+        placeholder="A logo of a person"
+      />
+    </div>
+    <div class="w-full px-3">
+      <label
+        class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
+        for="include"
+      >
+        Background color of the image
+      </label>
+      <input
+        required
+        formControlName="backgroundColor"
+        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        id="backgroundColor"
+        type="text"
+        placeholder="Light blue"
+      />
+    </div>
     <br />
   </div>
 

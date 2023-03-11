@@ -1,27 +1,33 @@
-# ImagGen
+# ImagGen Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+An angular frontend for DallE.
 
-## Development server
+## Intro
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A Spring application that serves as the backend for the angular frontend. This serves as an intermediate between the angular frontend and OpenAI servers.
 
-## Code scaffolding
+## Install the following
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. NodeJS - [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+   - Check using `node --version`.
+2. NPM should be automaticaclly installed with NodeJS.
+   - Check using `npm --version`
 
-## Build
+## Running the project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. CD into angular-frontend-imagGen folder
+2. Install the modules using npm
+   Run `npm install` in the angular project directory.
+   - This should install the modules. It might take a while.
+3. Start a live server
+   Run `npm start`. It should start the server at `http://localhost:4200/`, which reloads when anything is changed.
 
-## Running unit tests
+## Extra
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. (Not necessary unless putting in production).
 
 ## Further help
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.F
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
