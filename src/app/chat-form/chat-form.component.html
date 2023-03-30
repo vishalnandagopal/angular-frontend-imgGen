@@ -1,12 +1,12 @@
 <h2>Chat Form</h2>
 
-<form action="/chat" (submit)="onSubmit()">
+<form (submit)="onSubmit()">
     <div>
-        <label for="message">Context:</label>
+        <label for="message">Message:</label>
         <textarea id="message" name="message" [(ngModel)]="message"></textarea>
     </div>
     <div>
-        <label for="option">Role:</label>
+        <label for="option">Option:</label>
         <select id="option" name="option" [(ngModel)]="selectedOption">
             <option *ngFor="let option of options" [value]="option">{{ option }}</option>
         </select>
@@ -17,17 +17,13 @@
 </form>
 
 <div *ngIf="loading">
-    <p>Building an awesome prompt...</p>
+    <p>Loading response...</p>
 </div>
 
-<div *ngIf="chatResponse">
-    <div >
-        <h5 class="card-title">Response</h5>
-        <hr>
-        <p> This is something.{{ chatResponse }}</p>
-        <hr>
-        <button class="btn btn-primary" (click)="onCopy()">Copy to Clipboard</button>
-    </div>
+<div *ngIf="response">
+    <h3>Response:</h3>
+    <p>{{ response }} </p>
+    <button (click)="onCopy()">Copy to clipboard</button>
 </div>
 
 <div *ngIf="error">
