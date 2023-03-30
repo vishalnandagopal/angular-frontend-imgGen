@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { PromptBuilderComponent } from './prompt-builder/prompt-builder.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { ChatFormComponent } from './chat-form/chat-form.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     PromptBuilderComponent,
     FooterComponent,
+    ChatFormComponent,
     
   ],
   imports: [

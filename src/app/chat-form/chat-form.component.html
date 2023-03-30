@@ -1,0 +1,35 @@
+<h2>Chat Form</h2>
+
+<form action="/chat" (submit)="onSubmit()">
+    <div>
+        <label for="message">Context:</label>
+        <textarea id="message" name="message" [(ngModel)]="message"></textarea>
+    </div>
+    <div>
+        <label for="option">Role:</label>
+        <select id="option" name="option" [(ngModel)]="selectedOption">
+            <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<div *ngIf="loading">
+    <p>Building an awesome prompt...</p>
+</div>
+
+<div *ngIf="chatResponse">
+    <div >
+        <h5 class="card-title">Response</h5>
+        <hr>
+        <p> This is something.{{ chatResponse }}</p>
+        <hr>
+        <button class="btn btn-primary" (click)="onCopy()">Copy to Clipboard</button>
+    </div>
+</div>
+
+<div *ngIf="error">
+    <p>Error: {{ error }}</p>
+</div>
