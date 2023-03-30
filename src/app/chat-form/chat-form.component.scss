@@ -1,0 +1,82 @@
+form {
+  margin-top: 20px;
+  border: 1px solid #089cf4;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+#build-prompt-btn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+div#build-prompt-btn button {
+  background-color: rgba(8, 156, 244, 0.4);
+  border-radius: 3px;
+  padding: 4px;
+  margin: 10px 10px;
+}
+
+button#clipboard-btn {
+  background-color: rgba(8, 156, 244, 0.4);
+  border-radius: 3px;
+  padding: 4px;
+  margin: 10px;
+}
+
+p#response-text-block {
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+// Taken from ChatGPT, Hope this works:
+#outer {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // width: 60%;
+}
+
+#inner1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  justify-content: center;
+  // max-width: 60%;
+}
+
+#inner2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  // max-width: 60%;
+}
+
+#inner1 {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#inner2 {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#context-input {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+#select-role {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+}

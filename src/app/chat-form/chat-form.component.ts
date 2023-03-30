@@ -21,7 +21,6 @@ export class ChatFormComponent implements OnInit {
     private clipboardService: ClipboardService
   ) {}
 
-  //   constructor(private http: HttpClient) {}
 
   ngOnInit() {}
 
