@@ -4,7 +4,7 @@
     <div id="form-container inner1">
 
         <form (submit)="onSubmit()">
-            <div id = "context-input">
+            <div id="context-input">
                 <label for="message">Enter Context: &nbsp; &nbsp;</label>
                 <textarea id="message" name="message" rows="5" [(ngModel)]="message"></textarea>
             </div>
@@ -14,7 +14,7 @@
                     <option *ngFor="let option of options" [value]="option">{{ option }}</option>
                 </select>
             </div>
-            <div id="build-prompt-btn">
+            <div class="build-prompt-btn">
                 <button type="submit">Build Prompt</button>
             </div>
         </form>
@@ -27,7 +27,7 @@
         </div>
 
         <div *ngIf="response">
-            <h3>Generated prompt:</h3>
+            <h3> <b>Generated prompt: </b> <br></h3>
             <p id="response-text-block">{{ response }} </p>
             <button id="clipboard-btn" (click)="onCopy()">Copy to clipboard</button>
         </div>
