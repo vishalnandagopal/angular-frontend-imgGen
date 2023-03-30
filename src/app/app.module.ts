@@ -10,12 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { PromptBuilderComponent } from './prompt-builder/prompt-builder.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PromptBuilderComponent,
+    FooterComponent,
     
   ],
   imports: [
