@@ -28,6 +28,11 @@ button#clipboard-btn {
 p#response-text-block {
   max-width: 60%;
   word-wrap: break-word;
+  padding: 15px;
+}
+
+#message{
+    padding: 15px;
 }
 
 // Taken from ChatGPT, Hope this works:
@@ -80,3 +85,4 @@ p#response-text-block {
   align-items: center;
   margin: 10px 0px;
 }
+
