@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
+// Model of Response data: 
+// export interface Response {
+//   createddate: number;
+//   data: Image[];
+// }
+// 
+// export interface Image {
+//   url: string;
+// }
+
 @Component({
   selector: 'app-prompt-builder',
   templateUrl: './prompt-builder.component.html',
-  styleUrls: ['./prompt-builder.component.scss'],
+  styleUrls: ['./prompt-builder.component.css'],
 })
 export class PromptBuilderComponent {
   promptForm = this.formBuilder.group({
@@ -15,9 +25,15 @@ export class PromptBuilderComponent {
     include: '',
     backgroundColor: '',
   });
+
+
   img_src: string = '';
   loading: boolean = false;
   constructor(private formBuilder: FormBuilder) {}
+
+//   Array of all image URLs received in json document.
+  imageUrls: Response[] = [];
+
   onSubmit(): void {
     this.loading = true;
     console.log(this.promptForm.get('prompt'));
@@ -37,12 +53,18 @@ export class PromptBuilderComponent {
     })
       .then((res) => res.text())
       .then((data) => {
-        console.log(data);
-        this.img_src = data;
-        this.loading = false;
-      })
-      .catch((err) => console.log(err));
+
+        const jsonObject = JSON.parse(data);
+
+        for (let i = 0; i < jsonObject.data.length; i++) {
+          this.imageUrls.push(jsonObject.data[i].url);
+        }
+
+        // console.log(jsonObject.data[0].url); 
+
+      }).catch((err) => console.log(err));
   }
+
   async dl() {
     console.log('called1');
     const image = await fetch(this.img_src);
@@ -50,7 +72,7 @@ export class PromptBuilderComponent {
     const imageURL = URL.createObjectURL(imageBlob);
     const link = document.createElement('a');
     link.href = imageURL;
-    link.download = 'image.png' ;
+    link.download = 'image.png';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

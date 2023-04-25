@@ -15,6 +15,7 @@ import { ChatFormComponent } from './chat-form/chat-form.component';
 
 
 import { ClipboardModule } from 'ngx-clipboard';
+import { ImageRendererComponent } from './image-renderer/image-renderer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { ClipboardModule } from 'ngx-clipboard';
     PromptBuilderComponent,
     FooterComponent,
     ChatFormComponent,
+    ImageRendererComponent,
     
   ],
   imports: [

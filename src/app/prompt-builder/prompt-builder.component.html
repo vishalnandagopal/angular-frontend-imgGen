@@ -155,12 +155,19 @@
   </div>
 </form>
 <div class="flex flex-col items-center justify-center gap-10">
-  <p *ngIf="loading">Loading</p>
+
+<!-- Newly commented line: -->
+  <!-- <p *ngIf="loading">Loading</p>
   <img
     *ngIf="!loading"
     style="object-fit: scale-down; height: 50vh"
     src="{{ img_src }}"
-  />
+  /> -->
+
+  <div *ngFor="let imgUrl of imageUrls" class="image-container">
+    <img [src]="imgUrl" alt="Image">
+  </div>
+  <!-- Previously commented line: -->
   <!-- <a href="{{ img_src }}" target="_blank"  download="image.png"> -->
   <button
     (click)="dl()"
@@ -171,5 +178,4 @@
   </button>
   <div></div>
   <!-- </a> -->
-  <!-- thank you hemang -->
 </div>
