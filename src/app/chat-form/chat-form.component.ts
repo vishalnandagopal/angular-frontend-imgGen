@@ -47,7 +47,8 @@ export class ChatFormComponent implements OnInit {
     // TODO: Implement copy to clipboard functionality
 
     if (this.response) {
-      this.clipboardService.copy(this.response);
+      this.clipboardService.copy(this.response.replace(/^"(.*)"$/, '$1'));
+    //   The regex pecified above removes the double quotes from the start and end of the prompt string.
     }
   }
 }
