@@ -1,196 +1,183 @@
-<form 
-  [formGroup]="promptForm"
-  (ngSubmit)="onSubmit()"
-  class="w-full max-w-lg mx-0.5"
-  style="display: block; margin: auto; border: 2px ridge rgba(8, 156, 244, 0.5); padding: 10px 20px; border-radius: 30px; margin-top: 30px; margin-bottom: 30px;"
+<form
+    [formGroup]="promptForm"
+    (ngSubmit)="onSubmit()"
+    class="w-full max-w-lg mx-0.5"
+    style="
+        display: block;
+        margin: auto;
+        border: 2px ridge rgba(8, 156, 244, 0.5);
+        padding: 10px 20px;
+        border-radius: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    "
 >
-  <br />
-
-  <div class="flex flex-wrap -mx-3 mb-10">
-    <div class="w-full px-3 mb-6 md:mb-0">
-      <label
-        class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
-        for="prompt"
-      >
-        Enter your Prompt Here
-      </label>
-      <input
-        required
-        formControlName="prompt"
-        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-        id="prompt"
-        type="text"
-        placeholder="Banner for CRM Department"
-      />
-
-      <!-- Currently hidden. Later improivise this to display:inherit only when text is empty, otherwise display:none -->
-      <p class="text-red-500 text-l italic" style="display: none;">Please fill out this field.</p>
-    </div>
-
-    <div class="w-full px-3">
-      <label
-        class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
-        for="exclude"
-      >
-        Things to exclude
-      </label>
-      <input
-        required
-        formControlName="exclude"
-        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-        id="exclude"
-        type="text"
-        placeholder="Blurry, unclear, text"
-      />
-    </div>
-    <div class="w-full px-3">
-      <label
-        class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
-        for="include"
-      >
-        Things to include
-      </label>
-      <input
-        required
-        formControlName="include"
-        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-        id="include"
-        type="text"
-        placeholder="A logo of a person"
-      />
-    </div>
-    <div class="w-full px-3">
-      <label
-        class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
-        for="include"
-      >
-        Background color of the image
-      </label>
-      <input
-        required
-        formControlName="backgroundColor"
-        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-        id="backgroundColor"
-        type="text"
-        placeholder="Light blue"
-      />
-    </div>
-    <br />
-  </div>
-
-  <div class="flex flex-wrap -mx-3">
-    <div class="w-full px-3 mt-2">
-      <label
-        class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
-        for="grid-client"
-      >
-        To be used by
-      </label>
-      <input
-        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 focus:outline-none focus:bg-white focus:border-gray-500"
-        id="grid-client"
-        type="text"
-        placeholder="Sales Department, XYZ Inc."
-      />
-    </div>
-    <div class="w-full px-3 mt-2">
-      <label
-        class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
-        for="size"
-      >
-        Size
-      </label>
-      <div class="relative">
-        <select
-          required
-          class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-purpose"
-          formControlName="size"
-        >
-          <option value="1024x1024">1024x1024</option>
-          <option value="512x512">512x512</option>
-        </select>
-        <div
-          class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-        >
-          <svg
-            class="fill-current h-4 w-4"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path
-              d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+    <div class="flex flex-wrap -mx-3 mb-10">
+        <div class="w-full px-3 mb-6 md:mb-0">
+            <label
+                class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
+                for="prompt"
+            >
+                Enter your Prompt Here
+            </label>
+            <input
+                required
+                formControlName="prompt"
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                id="prompt"
+                type="text"
+                placeholder="Banner for CRM Department"
             />
-          </svg>
+
+            <!-- Currently hidden. Later improivise this to display:inherit only when text is empty, otherwise display:none -->
+            <p class="text-red-500 text-l italic" style="display: none">
+                Please fill out this field.
+            </p>
         </div>
-      </div>
-    </div>
 
-    <br /><br />
+        <div class="w-full px-3">
+            <label
+                class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
+                for="exclude"
+            >
+                Things to exclude
+            </label>
+            <input
+                required
+                formControlName="exclude"
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="exclude"
+                type="text"
+                placeholder="Blurry, unclear, text"
+            />
+        </div>
+        <div class="w-full px-3">
+            <label
+                class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
+                for="include"
+            >
+                Things to include
+            </label>
+            <input
+                required
+                formControlName="include"
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="include"
+                type="text"
+                placeholder="A logo of a person"
+            />
+        </div>
+        <div class="w-full px-3">
+            <label
+                class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
+                for="include"
+            >
+                Background color of the image
+            </label>
+            <input
+                required
+                formControlName="backgroundColor"
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="backgroundColor"
+                type="text"
+                placeholder="Light blue"
+            />
+        </div>
 
-    <div class="w-full px-3 mt-2">
-      <label
-        class="blocks uppercases tracking-wide text-gray-700 texl-s font-bold mb-2"
-        for="no"
-      >
-        Number of Images(Max 4)
-      </label>
-      <input
-        formControlName="no"
-        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 focus:outline-none focus:bg-white focus:border-gray-500"
-        id="no"
-        type="text"
-        placeholder="2"
-        min="1"
-        max="4"
-        required
-      />
+        <!-- <div class="w-full px-3 mt-2">
+            <label
+                class="blocks uppercases tracking-wide text-gray-700 text-l font-bold mb-2"
+                for="size"
+            >
+                Size
+            </label>
+            <div class="relative">
+                <select
+                    required
+                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-purpose"
+                    formControlName="size"
+                >
+                    <option value="1024x1024">1024x1024</option>
+                    <option value="512x512">512x512</option>
+                </select>
+                <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                >
+                    <svg
+                        class="fill-current h-4 w-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                    >
+                        <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                        />
+                    </svg>
+                </div>
+            </div>
+        </div> -->
+        <div class="p-3 mt-2" style="margin: auto" *ngIf="!submitted">
+            <input
+                class="shadow bg-orange-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                type="submit"
+                value="Submit"
+            />
+        </div>
+        <div class="p-3 mt-2" style="margin: auto" *ngIf="submitted">
+            <input
+                class="shadow bg-orange-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                type="submit"
+                value="Regenerate"
+            />
+        </div>
     </div>
-
-    <br />
-    <div class="p-3 mt-2" style="margin: auto">
-      <input
-        class="shadow bg-orange-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-        type="submit"
-      />
-    </div>
-  </div>
 </form>
 <div class="flex flex-col items-center justify-center gap-10">
+    <p *ngIf="loading">Loading</p>
 
-<!-- Newly commented line: -->
-  <!-- <p *ngIf="loading">Loading</p>
-  <img
-    *ngIf="!loading"
-    style="object-fit: scale-down; height: 50vh"
-    src="{{ img_src }}"
-  /> -->
-
-
-  <div *ngFor="let imgUrl of imageUrls; let i = index" class="image-container" class="w-full max-w-lg mx-0.5" 
-  style="display: block; margin: auto; border: 2px solid rgba(251, 157, 91, 0.8); padding: 10px 20px; border-radius: 30px; margin-top: 30px; margin-bottom: 30px;">
-
-    <img [src]="imgUrl" alt="Image" [id]="'image-' + i" >
-    <form method="post" action="localhost:8080/saveImage">
-        <input  class="appearance-none block w-4/10 bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mt-3 mx-auto leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="image-name" placeholder="Provide Image Name" [id]="'image-name-' + i">
-
-        <input class="shadow block bg-orange-500 mx-auto hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-3 mx-auto" [id]="'submit-image-' + i" type="button" value="Save this image" (click)="submitImageForm(i)" ng-reflect-onclick="submitImageForm(i)"/>
-
-        <!-- <button type="submit" [id]="'submit-image-' + i">Save this image</button> -->
-    </form>
-    <div class="mx-auto px-3" style="display: none; color: green;" [id]="'successful-' + i">Image Saved Succesfully</div>
-    <div class="mx-auto px-3" style="display: none; color: red;" [id]="'unsuccessful-' + i">There was some error</div>
-
-  </div>
-  <!-- Previously commented line: -->
-  <!-- <a href="{{ img_src }}" target="_blank"  download="image.png"> -->
-  <button
-    (click)="dl()"
-    class="shadow bg-orange-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-    *ngIf="img_src"
-  >
-    Download
-  </button>
-  <div></div>
-  <!-- </a> -->
+    <div
+        *ngFor="let imgUrl of imageArrays; let i = index"
+        class="image-container"
+        class="w-full max-w-lg mx-0.5"
+        style="
+            display: block;
+            margin: auto;
+            border: 2px solid rgba(251, 157, 91, 0.8);
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        "
+    >
+        <div *ngIf="loaded">
+            <img
+                [src]="imgUrl.url"
+                alt="Image generated by Dall-E"
+                [id]="'image-' + i"
+            />
+            <a [href]="imgUrl.url" target="_blank" download>
+                <button
+                    class="shadow block bg-orange-500 mx-auto hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-3 mx-auto"
+                    type="submit"
+                    [id]="'submit-image-' + i"
+                >
+                    Save this image
+                </button></a
+            >
+            <div
+                class="mx-auto px-3"
+                style="display: none; color: green"
+                [id]="'successful-' + i"
+            >
+                Image Saved Succesfully
+            </div>
+            <div
+                class="mx-auto px-3"
+                style="display: none; color: red"
+                [id]="'unsuccessful-' + i"
+            >
+                There was some error
+            </div>
+        </div>
+    </div>
 </div>

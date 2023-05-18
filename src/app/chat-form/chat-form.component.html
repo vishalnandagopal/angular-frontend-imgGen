@@ -1,18 +1,18 @@
 <div id="chatComponent-container outer">
-
-    <!-- <h2>Chat Form</h2> -->
-    <div id="form-container inner1">
-
+    <div id="chat-clicker">
+        To generate text that can be used on a website, use this section
+    </div>
+    <div id="form-container inner" class="form-container">
         <form (submit)="onSubmit()">
             <div id="context-input">
                 <label for="message">Enter Context: &nbsp; &nbsp;</label>
-                <textarea id="message" name="message" rows="5" [(ngModel)]="message"></textarea>
-            </div>
-            <div id="select-role">
-                <label for="option">Select Role: &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</label>
-                <select id="option" name="option" [(ngModel)]="selectedOption">
-                    <option *ngFor="let option of options" [value]="option">{{ option }}</option>
-                </select>
+                <textarea
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="message"
+                    name="message"
+                    rows="5"
+                    [(ngModel)]="message"
+                ></textarea>
             </div>
             <div class="build-prompt-btn">
                 <button type="submit">Build Prompt</button>
@@ -20,22 +20,22 @@
         </form>
     </div>
 
-    <br>
-    <div id="response inner2">
+    <br />
+    <div id="response inner">
         <div *ngIf="loading">
             <p>Loading response...</p>
         </div>
 
         <div *ngIf="response">
-            <h3> <b>Generated prompt: </b> <br></h3>
-            <p id="response-text-block">{{ response }} </p>
-            <button id="clipboard-btn" (click)="onCopy()">Copy to clipboard</button>
+            <h3><b>Generated prompt: </b> <br /></h3>
+            <p id="response-text-block">{{ response }}</p>
+            <button id="clipboard-btn" (click)="onCopy()">
+                Copy to clipboard
+            </button>
         </div>
 
         <div *ngIf="error">
             <p>Error: {{ error }}</p>
         </div>
-
     </div>
-
 </div>

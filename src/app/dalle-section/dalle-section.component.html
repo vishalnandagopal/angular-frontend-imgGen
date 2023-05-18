@@ -1,0 +1,30 @@
+<div id="image-prompt-builders">
+    <app-prompt-builder
+        (imageUrlsChange)="onImageUrlsChange($event)"
+    ></app-prompt-builder>
+    <app-prompt-builder
+        (imageUrlsChange)="onImageUrlsChange($event)"
+    ></app-prompt-builder>
+    <app-prompt-builder
+        (imageUrlsChange)="onImageUrlsChange($event)"
+    ></app-prompt-builder>
+    <app-prompt-builder
+        (imageUrlsChange)="onImageUrlsChange($event)"
+    ></app-prompt-builder>
+</div>
+<ul>
+    <li *ngFor="let item of imageIDs">{{ item }}</li>
+</ul>
+<form (submit)="onSubmit()">
+    <div class="build-prompt-btn">
+        <button type="submit">Generate Zip</button>
+        <a [href]="zipDownloadURL"
+            ><button
+                *ngIf="zipGenerated"
+                class="shadow bg-orange-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            >
+                Download
+            </button></a
+        >
+    </div>
+</form>

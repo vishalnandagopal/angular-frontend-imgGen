@@ -1,0 +1,16 @@
+#image-prompt-builders {
+    display: flex;
+}
+
+.build-prompt-btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.build-prompt-btn button {
+    background-color: rgba(8, 156, 244, 0.4);
+    border-radius: 3px;
+    padding: 4px;
+    margin: 10px 10px;
+}

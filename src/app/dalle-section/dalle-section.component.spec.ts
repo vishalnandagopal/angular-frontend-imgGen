@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PromptBuilderComponent } from './prompt-builder.component';
+import { DalleSectionComponent } from './dalle-section.component';
 
-describe('PromptBuilderComponent', () => {
-    let component: PromptBuilderComponent;
-    let fixture: ComponentFixture<PromptBuilderComponent>;
+describe('DalleSectionComponent', () => {
+    let component: DalleSectionComponent;
+    let fixture: ComponentFixture<DalleSectionComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [PromptBuilderComponent],
+            declarations: [DalleSectionComponent],
         }).compileComponents();
 
-        fixture = TestBed.createComponent(PromptBuilderComponent);
+        fixture = TestBed.createComponent(DalleSectionComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
