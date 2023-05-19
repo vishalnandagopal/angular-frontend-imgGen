@@ -11,6 +11,7 @@ export class DalleSectionComponent {
     imageIDs: string[] = [];
     zipDownloadURL: string = '';
     zipGenerated: boolean = false;
+    pageDescription: string[] = [];
 
     onImageUrlsChange(imageArrays: Image[]) {
         imageArrays.forEach((image) => {
@@ -23,13 +24,18 @@ export class DalleSectionComponent {
         console.log(this.imageIDs);
     }
     onSubmit() {
-        fetch('http://127.0.0.1:8080/getzipID/', {
+        const pageDescription: string =
+            (<HTMLInputElement>document.getElementById('page-description-text'))
+                .value + '';
+        this.pageDescription = [pageDescription];
+        fetch('http://127.0.0.1:8080/getzipID', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 imageIDs: this.imageIDs,
+                pageDescription: this.pageDescription,
             }),
         })
             .then((res) => res.text())
@@ -38,7 +44,7 @@ export class DalleSectionComponent {
                 this.zipGenerated = jsonObject.zipGenerated;
                 const zipID = jsonObject.zipID;
                 console.log(`ZipID is ${zipID}`);
-                this.zipDownloadURL = `http://127.0.0.1:8080/getzip/${zipID}`;
+                this.zipDownloadURL = `http://127.0.0.1:8080/getzip/${zipID}.zip`;
             });
     }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { ClipboardModule } from 'ngx-clipboard';
 import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
@@ -43,9 +42,10 @@ export class ChatFormComponent implements OnInit {
     }
 
     onCopy() {
-        // TODO: Implement copy to clipboard functionality
-
         if (this.response) {
+            /* this.clipboardService.copy(
+                document.getElementById('response-text-block')?.textContent + ''
+            ); */
             this.clipboardService.copy(this.response.replace(/^"(.*)"$/, '$1'));
             //   The regex pecified above removes the double quotes from the start and end of the prompt string.
         }

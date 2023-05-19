@@ -1,3 +1,10 @@
+#dalle-section-component-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
 #image-prompt-builders {
     display: flex;
 }
@@ -8,9 +15,26 @@
     justify-content: center;
 }
 
+#page-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#page-description textarea {
+    width: 40rem;
+}
+
 .build-prompt-btn button {
-    background-color: rgba(8, 156, 244, 0.4);
     border-radius: 3px;
     padding: 4px;
     margin: 10px 10px;
+}
+.image-ids {
+    width: 50vw;
+    font-size: 1.1rem;
+}
+
+.image-ids > ol > li {
+    font-family: monospace;
 }

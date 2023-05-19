@@ -70,6 +70,7 @@ export class PromptBuilderComponent {
                 include: (this.promptForm.get('include') as any).value,
                 backgroundColor: (this.promptForm.get('backgroundColor') as any)
                     .value,
+                mock: 'true',
             }),
         })
             .then((res) => res.text())

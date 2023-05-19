@@ -1,4 +1,4 @@
-# ImagGen Frontend
+# ImgGen Frontend
 
 An angular frontend for DallE.
 

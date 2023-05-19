@@ -16,6 +16,7 @@ import { ChatFormComponent } from './chat-form/chat-form.component';
 import { DalleSectionComponent } from './dalle-section/dalle-section.component';
 
 import { ClipboardModule } from 'ngx-clipboard';
+import { ChatFormImagePromptComponent } from './chat-form-image-prompt/chat-form-image-prompt.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -24,6 +25,7 @@ import { ClipboardModule } from 'ngx-clipboard';
         FooterComponent,
         ChatFormComponent,
         DalleSectionComponent,
+        ChatFormImagePromptComponent,
     ],
     imports: [
         BrowserModule,
