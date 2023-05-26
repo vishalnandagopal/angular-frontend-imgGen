@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 
 // Import components
 import { HomeComponent } from './home/home.component';
-import { PromptBuilderComponent } from './prompt-builder/prompt-builder.component';
+import { ImageGenComponent } from './image-gen/image-gen.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChatFormComponent } from './chat-form/chat-form.component';
 import { DalleSectionComponent } from './dalle-section/dalle-section.component';
@@ -21,7 +21,7 @@ import { ChatFormImagePromptComponent } from './chat-form-image-prompt/chat-form
     declarations: [
         AppComponent,
         HomeComponent,
-        PromptBuilderComponent,
+        ImageGenComponent,
         FooterComponent,
         ChatFormComponent,
         DalleSectionComponent,

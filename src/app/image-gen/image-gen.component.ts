@@ -1,32 +1,36 @@
-import { Component, Output, Input, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Image } from './../image.interface';
+import { Image } from '../image.interface';
 
 @Component({
-    selector: 'app-prompt-builder',
-    templateUrl: './prompt-builder.component.html',
-    styleUrls: ['./prompt-builder.component.css'],
+    selector: 'app-image-gen',
+    templateUrl: './image-gen.component.html',
+    styleUrls: ['./image-gen.component.css'],
 })
-export class PromptBuilderComponent {
+export class ImageGenComponent {
     promptForm = this.formBuilder.group({
         prompt: '',
         no: '1',
-        size: '1024x1024',
-        exclude: '',
-        include: '',
-        backgroundColor: '',
+        // size: '1024x1024',
+        // exclude: '',
+        // include: '',
+        // backgroundColor: '',
     });
     submitted: boolean = false;
     img_src: string = '';
     loading: boolean = false;
     loaded: boolean = false;
+    selected: boolean = false;
     constructor(private formBuilder: FormBuilder) {}
 
     //   Array of all image URLs received in json document.
     imageArrays: Image[] = [];
 
-    @Output() imageUrlsChange = new EventEmitter<Image[]>();
-
+    @Output() imageUrlsChange = new EventEmitter<Image>();
+    addThisImage(image: Image) {
+        this.selected = true;
+        this.imageUrlsChange.emit(image);
+    }
     onSubmit(): void {
         this.loading = true;
 
@@ -66,11 +70,7 @@ export class PromptBuilderComponent {
             },
             body: JSON.stringify({
                 prompt: (this.promptForm.get('prompt') as any).value,
-                exclude: (this.promptForm.get('exclude') as any).value,
-                include: (this.promptForm.get('include') as any).value,
-                backgroundColor: (this.promptForm.get('backgroundColor') as any)
-                    .value,
-                mock: 'true',
+                // mock: 'true',
             }),
         })
             .then((res) => res.text())
@@ -82,20 +82,32 @@ export class PromptBuilderComponent {
                 images.forEach((image) => {
                     if (this.imageArrays.length > 0) {
                         i = this.imageArrays.pop();
+                        this.imageArrays.push(i);
                         oldID = i.id;
                     } else {
                         oldID = '';
                     }
                     this.imageArrays.push(
-                        new Image(image.id, image.url, oldID)
+                        image.generatedFrom == 'd'
+                            ? new Image(
+                                  image.id,
+                                  image.src,
+                                  image.generatedFrom,
+                                  oldID
+                              )
+                            : new Image(
+                                  image.id,
+                                  'data:image/png;base64,' + image.src,
+                                  image.generatedFrom,
+                                  oldID
+                              )
                     );
                 });
 
-                this.imageUrlsChange.emit(this.imageArrays);
-                console.log('Image urls are %s', this.imageArrays);
                 this.loaded = true;
                 this.loading = false;
                 this.submitted = true;
+                this.selected = false;
             })
             .catch((err) => {
                 console.log(err);

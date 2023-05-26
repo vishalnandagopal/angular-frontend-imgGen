@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PromptBuilderComponent } from './prompt-builder.component';
+import { ImageGenComponent } from './image-gen.component';
 
 describe('PromptBuilderComponent', () => {
-    let component: PromptBuilderComponent;
-    let fixture: ComponentFixture<PromptBuilderComponent>;
+    let component: ImageGenComponent;
+    let fixture: ComponentFixture<ImageGenComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [PromptBuilderComponent],
+            declarations: [ImageGenComponent],
         }).compileComponents();
 
-        fixture = TestBed.createComponent(PromptBuilderComponent);
+        fixture = TestBed.createComponent(ImageGenComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

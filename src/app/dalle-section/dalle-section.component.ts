@@ -13,15 +13,12 @@ export class DalleSectionComponent {
     zipGenerated: boolean = false;
     pageDescription: string[] = [];
 
-    onImageUrlsChange(imageArrays: Image[]) {
-        imageArrays.forEach((image) => {
-            this.imageIDs = this.imageIDs.filter((item) => {
-                console.log(item != image.oldID);
-                return item != image.oldID;
-            });
-            this.imageIDs.push(image.id);
+    onImageUrlsChange(image: Image) {
+        this.imageIDs = this.imageIDs.filter((item) => {
+            return item != image.oldID;
         });
-        console.log(this.imageIDs);
+        this.imageIDs.push(image.id);
+        this.zipGenerated = false;
     }
     onSubmit() {
         const pageDescription: string =
@@ -40,9 +37,8 @@ export class DalleSectionComponent {
         })
             .then((res) => res.text())
             .then((data) => {
-                const jsonObject = JSON.parse(data);
-                this.zipGenerated = jsonObject.zipGenerated;
-                const zipID = jsonObject.zipID;
+                const zipID = data;
+                this.zipGenerated = true;
                 console.log(`ZipID is ${zipID}`);
                 this.zipDownloadURL = `http://127.0.0.1:8080/getzip/${zipID}.zip`;
             });

@@ -65,6 +65,13 @@ p #response-text-block {
     flex-direction: column;
 }
 
+.response-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #clipboard-btn {
     align-self: center;
 }
