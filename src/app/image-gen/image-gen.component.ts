@@ -5,7 +5,7 @@ import { Image } from '../image.interface';
 @Component({
     selector: 'app-image-gen',
     templateUrl: './image-gen.component.html',
-    styleUrls: ['./image-gen.component.css'],
+    styleUrls: ['./image-gen.component.scss'],
 })
 export class ImageGenComponent {
     promptForm = this.formBuilder.group({
@@ -62,6 +62,7 @@ export class ImageGenComponent {
             ]
         }
          */
+        this.imageArrays.length = 0;
 
         fetch('http://127.0.0.1:8080/image', {
             method: 'POST',

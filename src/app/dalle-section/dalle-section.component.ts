@@ -12,6 +12,8 @@ export class DalleSectionComponent {
     zipDownloadURL: string = '';
     zipGenerated: boolean = false;
     pageDescription: string[] = [];
+    zipID: string = '-1';
+    error: string = '';
 
     onImageUrlsChange(image: Image) {
         this.imageIDs = this.imageIDs.filter((item) => {
@@ -37,10 +39,16 @@ export class DalleSectionComponent {
         })
             .then((res) => res.text())
             .then((data) => {
-                const zipID = data;
-                this.zipGenerated = true;
-                console.log(`ZipID is ${zipID}`);
-                this.zipDownloadURL = `http://127.0.0.1:8080/getzip/${zipID}.zip`;
+                const jsonObject = JSON.parse(data);
+                console.log(jsonObject);
+                this.zipID = jsonObject.zipID;
+                this.zipGenerated = jsonObject.zipGenerated;
+                this.error = jsonObject.error;
+                if (this.zipGenerated) {
+                    console.log(`ZipID is ${this.zipID}`);
+                    this.zipDownloadURL = `http://127.0.0.1:8080/getzip/${this.zipID}.zip`;
+                } else {
+                }
             });
     }
 }

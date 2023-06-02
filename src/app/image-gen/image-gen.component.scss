@@ -1,0 +1,15 @@
+.image-container {
+    max-width: 60%;
+}
+.image-container {
+    display: block;
+    margin: auto;
+    border: 2px solid rgba(251, 157, 91, 0.8);
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.generated-image {
+    object-fit: scale-down;
+}
