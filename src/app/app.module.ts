@@ -17,6 +17,7 @@ import { DalleSectionComponent } from './dalle-section/dalle-section.component';
 
 import { ClipboardModule } from 'ngx-clipboard';
 import { ChatFormImagePromptComponent } from './chat-form-image-prompt/chat-form-image-prompt.component';
+
 @NgModule({
     declarations: [
         AppComponent,
