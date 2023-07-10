@@ -1,10 +1,10 @@
 # ImgGen Frontend
 
-An angular frontend for DallE.
+An angular frontend for creating and exporting a template that consits of 4 AI generated images and a page description. This template can be imported into [BMC DWP's studio](https://www.bmc.com/it-solutions/bmc-helix-digital-workplace.html).
 
-## Intro
+## APIs Used
 
-A Spring application that serves as the backend for the angular frontend. This serves as an intermediate between the angular frontend and OpenAI servers.
+- Please also refer to the [backend](https://github.com/vishalnandagopal/backend-imgGen) that this application talks to. This serves as a UI for displaying generated images, and exporting the final template that the Spring backend has generated.
 
 ## Install the following
 
